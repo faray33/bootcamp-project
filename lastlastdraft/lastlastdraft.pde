@@ -4,7 +4,7 @@ float green;
 float blue;
 float r; 
 float startGrow;
-int NBALLS = 3000;  // Number of balls are in the sketch (try changing to higher or lower numbers).
+int NBALLS = 2000;  // Number of balls are in the sketch (try changing to higher or lower numbers).
 
 Ball[] balls;
 
@@ -39,7 +39,7 @@ void draw() {
   
   startGrow++;  
  
-  if (startGrow > 0 && r<250)
+  if (startGrow > 0 && r<300)
   {    
     r = r + 4;
     fill(red,green,blue);    
@@ -50,9 +50,9 @@ void draw() {
   } 
   
   popMatrix();
-  if (r > 250)
+  if (r > 300)
   {
-     r = 251; //terminates startGrow method
+     r = 301; //terminates startGrow method
     // rotateY(radians(angle));
      angle = angle++;
      fill(red,green,blue);    
@@ -62,7 +62,7 @@ void draw() {
     
   angle = angle + 2; //rotation
   
-  if (r > 250 ) //confetti appears
+  if (r > 299 ) //confetti appears
   { 
 
     for (Ball ball : balls) {
@@ -80,11 +80,12 @@ void draw() {
   
       }
     }
-
     // Move all the balls by one step.
     for (Ball ball : balls)
     {
       ball.move();
     }
+    
+    loop();
   }
 }
